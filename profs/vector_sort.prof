@@ -1,0 +1,45 @@
+	Thu Feb  6 04:25 2014 Time and Allocation Profiling Report  (Final)
+
+	   vector_sort +RTS -p -hy -RTS
+
+	total time  =        0.24 secs   (241 ticks @ 1000 us, 1 processor)
+	total alloc = 112,018,528 bytes  (excludes profiling overheads)
+
+COST CENTRE               MODULE  %time %alloc
+
+unsafeSort                Main     80.1   31.4
+makeStartQueue.step       Main      9.1   60.0
+compare                   Main      5.8    0.0
+makeStartQueue            Main      4.1    5.2
+makeStartQueue.step.start Main      0.8    2.9
+
+
+                                                                            individual     inherited
+COST CENTRE                       MODULE                  no.     entries  %time %alloc   %time %alloc
+
+MAIN                              MAIN                     67           0    0.0    0.0   100.0  100.0
+ main                             Main                    135           0    0.0    0.5   100.0  100.0
+  showsPrec                       Main                    149           1    0.0    0.0     0.0    0.0
+   showsPrec                      Main                    151           1    0.0    0.0     0.0    0.0
+  main.sorted                     Main                    136           1    0.0    0.0   100.0   99.5
+   unsafeSort                     Main                    141           1   80.1   31.4    85.9   31.4
+    compare                       Main                    147     3789901    0.0    0.0     0.0    0.0
+    compare                       Main                    143     4524045    5.8    0.0     5.8    0.0
+     compare                      Main                    148       48527    0.0    0.0     0.0    0.0
+   makeStartQueue                 Main                    138           0    4.1    5.2    14.1   68.1
+    makeStartQueue.step           Main                    139      200201    9.1   60.0    10.0   62.9
+     makeStartQueue.step.finish   Main                    146      100100    0.0    0.0     0.0    0.0
+     makeStartQueue.step.stopTime Main                    145      100100    0.0    0.0     0.0    0.0
+     makeStartQueue.step.duration Main                    144      100100    0.0    0.0     0.0    0.0
+     makeStartQueue.step.start    Main                    142      100100    0.8    2.9     0.8    2.9
+     makeStartQueue.step.s'       Main                    140      100100    0.0    0.0     0.0    0.0
+ CAF                              Main                    133           0    0.0    0.0     0.0    0.0
+  showsPrec                       Main                    152           0    0.0    0.0     0.0    0.0
+  showsPrec                       Main                    150           0    0.0    0.0     0.0    0.0
+  makeStartQueue                  Main                    137           1    0.0    0.0     0.0    0.0
+  main                            Main                    134           1    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Handle.FD        113           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.Conc.Signal         109           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Encoding          91           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Encoding.Iconv    90           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.FD                89           0    0.0    0.0     0.0    0.0

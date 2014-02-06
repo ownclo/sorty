@@ -1,0 +1,45 @@
+	Thu Feb  6 05:05 2014 Time and Allocation Profiling Report  (Final)
+
+	   sorting_is_too_long +RTS -p -hy -RTS
+
+	total time  =        1.40 secs   (1396 ticks @ 1000 us, 1 processor)
+	total alloc = 1,394,219,232 bytes  (excludes profiling overheads)
+
+COST CENTRE          MODULE  %time %alloc
+
+makeStartQueue.(...) Main     79.7   69.2
+main.startQueue      Main     13.6   17.7
+compare              Main      2.6    0.0
+main.inList          Main      2.0    5.2
+makeStartQueue       Main      1.1    2.1
+main                 Main      0.8    5.8
+
+
+                                                                   individual     inherited
+COST CENTRE              MODULE                  no.     entries  %time %alloc   %time %alloc
+
+MAIN                     MAIN                     48           0    0.0    0.0   100.0  100.0
+ main                    Main                     97           0    0.8    5.8   100.0   99.5
+  showsPrec              Main                    109           1    0.0    0.0     0.0    0.0
+   showsPrec             Main                    111           1    0.0    0.0     0.0    0.0
+  main.startQueue        Main                    100           1   13.6   17.7    97.2   89.1
+   compare               Main                    107     3295543    2.6    0.0     2.6    0.0
+    compare              Main                    108     1740545    0.0    0.0     0.0    0.0
+   makeStartQueue        Main                    101      100101    1.1    2.1    81.0   71.3
+    makeStartQueue.d     Main                    106      100100    0.0    0.0     0.0    0.0
+    makeStartQueue.e2    Main                    105      100100    0.1    0.1     0.1    0.1
+    makeStartQueue.(...) Main                    104      100100   79.7   69.2    79.7   69.2
+    makeStartQueue.s     Main                    103      100100    0.0    0.0     0.0    0.0
+    makeStartQueue.e1    Main                    102      100100    0.0    0.0     0.0    0.0
+  main.inList            Main                     98           1    2.0    4.7     2.0    4.7
+ CAF                     Main                     95           0    0.0    0.0     0.0    0.5
+  showsPrec              Main                    112           0    0.0    0.0     0.0    0.0
+  showsPrec              Main                    110           0    0.0    0.0     0.0    0.0
+  main                   Main                     96           1    0.0    0.0     0.0    0.5
+   main.inList           Main                     99           0    0.0    0.5     0.0    0.5
+ CAF                     GHC.IO.Handle.FD         94           0    0.0    0.0     0.0    0.0
+ CAF                     GHC.Conc.Signal          92           0    0.0    0.0     0.0    0.0
+ CAF                     Text.Read.Lex            82           0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.Encoding          76           0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.Encoding.Iconv    75           0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.FD                74           0    0.0    0.0     0.0    0.0
